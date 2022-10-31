@@ -45,8 +45,33 @@ onMounted(() => {
           placeholder="e.g. make a video"
           v-model="input_content"
         />
-
-        {{ input_content }}
+        <!-- input content displayed to input_content variable  -->
+        <!-- {{ input_content }} -->
+        <h4>Pick a Category</h4>
+        <div class="options">
+          <label>
+            <input
+              type="radio"
+              name="catogory"
+              id="category1"
+              value="business"
+              v-model="input_category"
+            />
+            <span class="bubble business"></span>
+            <div>Business</div>
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="catogory"
+              id="category1"
+              value="personal"
+              v-model="input_category"
+            />
+            <span class="bubble personal"></span>
+            <div>Personal</div>
+          </label>
+        </div>
       </form>
     </section>
   </main>
