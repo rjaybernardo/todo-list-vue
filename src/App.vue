@@ -27,6 +27,14 @@ const addTodo = () => {
   });
 };
 
+watch(
+  todos,
+  (newVal) => {
+    localStorage.setItem("todos", JSON.stringify(newVal));
+  },
+  { deep: true }
+);
+
 // watch changes and setup local storage
 watch(name, (newVal) => {
   localStorage.setItem("name", newVal);
