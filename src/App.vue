@@ -14,7 +14,18 @@ const todos_asc = computed(() =>
   })
 );
 
-const addTodo = () => {};
+// checks if there is a value or only spaces
+const addTodo = () => {
+  if (input_content.value.trim() === "" || input_category.value === null) {
+    return;
+  }
+  // console.log("addTodo");
+  todos.value.push({
+    content: input_content.value,
+    category: input_category.value,
+    createdAt: new Date.getTime(),
+  });
+};
 
 // watch changes and setup local storage
 watch(name, (newVal) => {
